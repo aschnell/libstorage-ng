@@ -5,6 +5,8 @@ from storage import Environment, Storage
 
 environment = Environment(True)
 
+print(environment)
+
 storage = Storage(environment)
 storage.probe()
 
