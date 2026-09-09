@@ -81,7 +81,6 @@ namespace storage
 
     CrypttabEntry::CrypttabEntry()
     {
-
     }
 
 
@@ -90,13 +89,11 @@ namespace storage
         crypt_device( crypt_device ),
 	block_device( block_device )
     {
-
     }
 
 
     CrypttabEntry::~CrypttabEntry()
     {
-
     }
 
 
