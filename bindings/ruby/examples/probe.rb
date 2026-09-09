@@ -5,6 +5,8 @@ require 'storage'
 
 environment = Storage::Environment.new(true)
 
+puts environment
+
 storage = Storage::Storage.new(environment)
 storage.probe()
 
