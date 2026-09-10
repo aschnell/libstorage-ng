@@ -1147,8 +1147,6 @@ namespace storage
 	SystemCmd::Args cmd_args = { PARTED_BIN, "--script", partitionable->get_name(),
 	    "unit", "s", "resizepart", to_string(get_number()), to_string(get_region().get_end()) };
 
-	udev_settle();
-
 	wait_for_devices({ get_non_impl() });
 
 	SystemCmd cmd(cmd_args, SystemCmd::DoThrow);
