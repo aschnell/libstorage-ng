@@ -764,6 +764,8 @@ namespace storage
 
 	SystemCmd::Args cmd_args = { CRYPTSETUP_BIN, "--batch-mode", "--", "erase", blk_device->get_name() };
 
+	wait_for_devices({ blk_device });
+
 	SystemCmd cmd(cmd_args, SystemCmd::DoThrow);
 
 	// cryptsetup erase does not remove the signature, thus also use
