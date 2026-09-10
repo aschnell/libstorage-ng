@@ -34,6 +34,13 @@ class TestLogger(unittest.TestCase):
 
         self.assertTrue(my_logger_called)
 
+        # Unsetting the logger is needed if the destructor of Storage
+        # logs something. Otherwise MyLogger might (cleanup order is
+        # non-deterministic in Python) not be valid anymore at that
+        # time.
+
+        set_logger(None)
+
 
 if __name__ == '__main__':
     unittest.main()
