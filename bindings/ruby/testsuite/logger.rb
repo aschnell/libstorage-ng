@@ -37,6 +37,12 @@ class TestLogger < Test::Unit::TestCase
 
     assert($my_logger_called)
 
+    # Unsetting the logger is needed if the destructor of Storage logs
+    # something. Otherwise MyLogger might (cleanup order is
+    # non-deterministic in Ruby) not be valid anymore at that time.
+
+    Storage::logger = nil
+
   end
 
 end
